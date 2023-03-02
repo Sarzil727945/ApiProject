@@ -9,7 +9,7 @@ const loadUser = async(searchText) =>{
  function display(dataArray){
     const parentDiv = document.getElementById('parent-div');
     parentDiv.innerHTML = '';
-
+   
     // display no item 
     const noItem = document.getElementById('no-item');
     if (dataArray === null) {
@@ -49,7 +49,6 @@ const loadUser = async(searchText) =>{
 document.getElementById('btn-submit').addEventListener('click', function(){
   const inputField = document.getElementById('input-field');
   const inputText = inputField.value;
-  inputField.value ='';
   
   // json function call 
   loadUser(inputText);   
@@ -58,7 +57,7 @@ document.getElementById('btn-submit').addEventListener('click', function(){
 loadUser('chi');
 
 
-//  jason button click id function 
+//  modal jason button click id function 
  function modalJson(id){
   const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
   fetch(url)

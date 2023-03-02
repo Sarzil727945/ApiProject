@@ -12,21 +12,32 @@
     function display(dataArray){
         const parentDiv = document.getElementById('parent-div');
         parentDiv.innerHTML = '';
-      
      // display no item part starts
         const noItem = document.getElementById('no-item');
         // spinner function call loader stop
         toggleSpinner(false);
-
+        
+        const showAll = document.getElementById('show-all');
         if (dataArray === null) {
           noItem.classList.remove('d-none');
+          showAll.classList.add('d-none');
           return;
         }
         else{
           noItem.classList.add('d-none');
         }
       // display no item part end
-        dataArray = dataArray.slice(0, 10); 
+
+      // show all part start
+        if(dataArray.length > 10){
+          dataArray = dataArray.slice(0, 10);
+          showAll.classList.remove('d-none');
+        }
+        else{
+          showAll.classList.add('d-none');
+        }
+      // show all part end
+         
         dataArray.forEach(element =>{
               // new tag create 
               const childDiv = document.createElement('div');
@@ -41,7 +52,7 @@
                         <h5 class="card-title">${element.strArea}</h5>
                         <p class="card-text"> Put the potatoes in a large pan of cold salted water and bring to the boil. Lower the heat, cover, then simmer gently for 15 minutes until tender. Drain, then return to the pan over a low heat for</p>
                         <button onclick="modalJson('${element.idMeal}')" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Details
+                        Show Details
                       </button>
                     </div>
                 </div>
@@ -106,7 +117,9 @@ loadUser('chi');
     else{
       spinnerField.classList.add('d-none');
     }
-  }
+  };
 // spinner part end
+
+
 
 

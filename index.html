@@ -10,35 +10,48 @@
 <!-- Bootstrap css link -->
 </head>
 <body>
-  <header class="container mt-5 d-flex justify-content-center">
-    <input id="input-field" type="text" class="w-25 py-2 px-2 form-control mx-3" placeholder="Search..">
-    <button id="btn-submit" type="submit" class="btn btn-primary">Search</button>
+  <header>
+    <section class="text-center mt-3">
+      <h1 class="display-5 fw-semibold">Welcome to <span class="fw-bold text-info">My Website(SA)</span></h1>
+    </section> 
+    <section class="container mt-5 d-flex justify-content-center">
+      <input id="input-field" type="text" class="w-50  py-2 px-2 form-control mx-3" placeholder="Search..">
+      <button id="btn-submit" type="submit" class="btn btn-primary">Search</button>
+    </section>
   </header>
 
   <main class="container mt-5">
-     <section class="section1">
-          <div id="parent-div" class="row row-cols-1 row-cols-md-3 g-4">
+    <section class="section1">
+      <!-- display part start  -->
+        <div id="parent-div" class="row row-cols-1 row-cols-md-3 g-4">
 
+        </div>
+      <!-- display part end  -->
+
+      <!-- Modal part start -->
+        <div class="modal fade" id="exampleModal" tabindex="-1"     aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 id="exampleModalLabel" class="modal-title fs-5" >Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div id="modal-div" class="modal-body">
+                
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
           </div>
-  
-   <!-- Modal -->
-   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-     <div class="modal-dialog modal-dialog-centered">
-       <div class="modal-content">
-         <div class="modal-header">
-           <h1 id="exampleModalLabel" class="modal-title fs-5" >Modal title</h1>
-           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-         </div>
-         <div id="modal-div" class="modal-body">
-          
-         </div>
-         <div class="modal-footer">
-           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-         </div>
-       </div>
-     </div>
-   </div>        
+        </div>
+      <!-- Modal part end -->        
+    </section>
+     <!-- No Found item part start -->
+     <section>
+
      </section>
+     <!-- No Found item part ends -->
     </main>
 <!-- All js link  -->
   <!-- Bootstrap js link -->

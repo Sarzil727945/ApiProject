@@ -10,6 +10,8 @@ const loadUser = async(searchText) =>{
  function display(dataArray){
     const parentDiv = document.getElementById('parent-div');
     parentDiv.innerHTML = '';
+    // display only 10 item 
+    dataArray = dataArray.slice(0,10);
      dataArray.forEach(element =>{
         //   new tag create 
           const childDiv = document.createElement('div');

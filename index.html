@@ -12,12 +12,12 @@
 <body>
   <header>
     <section class="text-center mt-3">
-      <h1 class="display-5 fw-semibold">Welcome to <span class="fw-bold text-info">My Website(SA)</span></h1>
+      <h1 class="display-5 fw-semibold">Welcome to <span class="text-info">My Website(SA)</span></h1>
     </section>
   <!-- search part start   -->
     <section class="container mt-5 d-flex justify-content-center">
       <input id="input-field" type="text" class="w-50  py-2 px-2 form-control mx-3" placeholder="Search..">
-      <button id="btn-submit" type="submit" class="btn btn-primary">Search</button>
+      <button id="btn-search" type="submit" class="btn btn-primary">Search</button>
     </section>
   <!-- search part start   -->
   </header>
@@ -60,8 +60,8 @@
 
   <!-- spinner part start -->
     <section>
-      <div class="d-flex justify-content-center">
-        <div class="spinner-border  text-info" role="status">
+      <div id="spinner" class="d-none d-flex justify-content-center m-5">
+        <div class="spinner-border text-info " role="status">
           <span class="visually-hidden">Loading...</span>
         </div>
       </div>

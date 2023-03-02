@@ -13,8 +13,11 @@
         const parentDiv = document.getElementById('parent-div');
         parentDiv.innerHTML = '';
       
-    // display no item part starts
+     // display no item part starts
         const noItem = document.getElementById('no-item');
+        // spinner function call loader stop
+        toggleSpinner(false);
+
         if (dataArray === null) {
           noItem.classList.remove('d-none');
           return;
@@ -46,12 +49,15 @@
               // parentTag append childTag 
               parentDiv.appendChild(childDiv);
         });
-     };
+      
+    };
   // main display item part ends
 // main part ends
 
 // search part starts
-  document.getElementById('btn-submit').addEventListener('click', function(){
+  document.getElementById('btn-search').addEventListener('click', function(){
+    // spinner function call loader start 
+    toggleSpinner(true);
     const inputField = document.getElementById('input-field');
     const inputText = inputField.value;
 
@@ -90,5 +96,17 @@ loadUser('chi');
     };
   // modal button click id function end
 // modal part ends 
+
+// spinner part start
+  function toggleSpinner(isLoading) {
+    const spinnerField = document.getElementById('spinner');
+    if(isLoading){
+      spinnerField.classList.remove('d-none');
+    }
+    else{
+      spinnerField.classList.add('d-none');
+    }
+  }
+// spinner part end
 
 

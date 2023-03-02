@@ -1,17 +1,26 @@
-// url 1st json convert
+// url 1st json convert start
 const loadUser = async(searchText) =>{
      const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`;
      const res = await fetch(url);
      const data = await res.json();
      display(data.meals);
  };
-//url 1st json convert 
-
+//url 1st json convert end
  function display(dataArray){
     const parentDiv = document.getElementById('parent-div');
     parentDiv.innerHTML = '';
-    // display only 10 item 
-    dataArray = dataArray.slice(0,10);
+
+    // display no item 
+    const noItem = document.getElementById('no-item');
+    if (dataArray === null) {
+      noItem.classList.remove('d-none');
+      return;
+    }
+    else{
+      noItem.classList.add('d-none');
+    }
+    dataArray = dataArray.slice(0, 10);
+    // display all item 
      dataArray.forEach(element =>{
         //   new tag create 
           const childDiv = document.createElement('div');
@@ -70,9 +79,6 @@ loadUser('chi');
     <img class="img-fluid" src="${element.strMealThumb}"  alt="...">
     `
     modalParentDiv.appendChild(modalChildDiv);
-
-
-    console.log(element);
   })
  }
 

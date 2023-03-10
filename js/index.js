@@ -11,12 +11,12 @@
   //main display item part start
     function display(dataArray, allData){
         const parentDiv = document.getElementById('parent-div');
-        parentDiv.innerHTML = '';
-     // display no item part starts
-        const noItem = document.getElementById('no-item');
-        // spinner function call loader stop
+        parentDiv.innerHTML = ''; 
+      // spinner function call loader stop
         toggleSpinner(false);
-        
+
+     // display no item part starts
+        const noItem = document.getElementById('no-item'); 
         const showAll = document.getElementById('show-all');
         if (dataArray === null) {
           noItem.classList.remove('d-none');
